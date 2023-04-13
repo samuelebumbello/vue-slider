@@ -6,10 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.css' integrity='sha512-Z0kTB03S7BU+JFU0nw9mjSBcRnZm2Bvm0tzOX9/OuOuz01XQfOpa0w/N9u6Jf2f1OAdegdIPWZ9nIZZ+keEvBw==' crossorigin='anonymous'/>
     <script src="https://unpkg.com/vue@3"></script>
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Vue Slider</title>
 </head>
 <body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="container">
+                <div class="slider">
+                    
+                    <div id="container-images">
+                        <img :src="images[counter]" alt="">
+                    </div>
+                    
+                    <div id="circles-collection">
+                        
+                        <i @click="prevNextImg(false)" class="fa-solid fa-chevron-up chevron-btn"></i>
+
+                        <div class="circle">
+                            <div class="count-thumbs">
+                                <img v-for="(i, index) in images" :src="i" @click="counter = index">
+                            </div>    
+                        </div>
+                        
+                        <i @click="prevNextImg(true)" class="fa-solid fa-chevron-down chevron-btn"></i>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>
